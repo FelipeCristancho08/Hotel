@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'com.felipe'
+version '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    //testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    testImplementation project.ext.junit5
+    implementation project.ext.junit5
+    testImplementation project.ext.mockito
+
+    compileOnly project.ext.lombok
+    annotationProcessor project.ext.lombok
+}
+
+test {
+    useJUnitPlatform()
+}
